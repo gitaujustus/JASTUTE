@@ -1,11 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Protest+Revolution&family=Protest+Riot&family=Sansita&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  --dynamic-orange: 9, 92, 103;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  /* --dynamic-orange: 9, 92, 103; */
+  /* --dynamic-orang: 53, 58, 91; */
+  /* --dynamic-orang: 75, 83, 129; */
+  --dynamic-orang: 31, 34, 53;
+  /* --dynamic-orang: #282c45; */
+  --secondary: #181818;
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,17 +24,14 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --secondary: 219, 92, 103;
+
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--dynamic-orang));
 }
 
 @layer utilities {
@@ -31,3 +39,17 @@ body {
     text-wrap: balance;
   }
 }
+
+.gradient-mask {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  position: relative;
+  z-index: 1;
+}
+
+Image {
+  z-index: 0;
+}
+
+
+
+/* https://colorlib.com/wp/best-colors-for-websites/ */
